@@ -17,7 +17,9 @@ const App = () => {
     const localStorageTarget = JSON.parse(
       window.localStorage.getItem('contacts')
     );
-    return localStorageTarget.length > 0 ? localStorageTarget : defaultContacts;
+    return localStorageTarget && localStorageTarget.length > 0
+      ? localStorageTarget
+      : defaultContacts;
   });
   const [filter, setFilter] = useState('');
 
